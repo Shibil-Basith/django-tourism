@@ -3,43 +3,83 @@
 {% block main %}
 {% load static %}
 
-<div class="booking-hero-container d-flex align-items-center justify-content-center">
-  <div class="container">
-    <div class="row align-items-center justify-content-center g-4 g-lg-5">
+<!-- Glassmorphism Hero Wrapper -->
+<div class="glass-hero-section d-flex align-items-center justify-content-center">
+  <div class="container my-5">
+    <div class="row align-items-center justify-content-center g-5">
       
-      <!-- Left Side: Interactive Feature Image -->
-      <div class="col-12 col-md-5 text-center text-md-end">
-        <div class="image-wrapper shadow-lg">
-          <img src="{% static 'images/travel1.jpg' %}" alt="Travel Destination" class="img-fluid rounded-4">
-          <div class="image-overlay-badge">
-            <span>✨ Popular Choice</span>
+      <!-- Left Side: Bold Modern Copy & Value Prop -->
+      <div class="col-12 col-lg-6 text-center text-lg-start text-white animate-fade-in">
+        <div class="badge-glass mb-3">
+          <i class="bi bi-compass-fill me-2 text-info animate-spin-slow"></i>
+          <span>Explore Without Limits</span>
+        </div>
+        <h1 class="display-3 fw-extrabold mb-3 tracking-tight">
+          BOOK YOUR <br><span class="text-gradient">ADVENTURE.</span>
+        </h1>
+        <p class="lead text-light-muted mb-4 max-w-xl">
+          Discover handpicked destinations, seamless reservations, and secure payments all in one beautiful platform.
+        </p>
+        
+        <!-- Modern Icons Grid -->
+        <div class="row g-3 marketing-badges pt-2">
+          <div class="col-6 col-sm-4">
+            <div class="mini-glass-card">
+              <i class="bi bi-geo-alt-fill text-info mb-2 fs-4"></i>
+              <h6>Destinations</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4">
+            <div class="mini-glass-card">
+              <i class="bi bi-shield-check text-success mb-2 fs-4"></i>
+              <h6>100% Secure</h6>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 hidden-xs">
+            <div class="mini-glass-card">
+              <i class="bi bi-lightning-charge-fill text-warning mb-2 fs-4"></i>
+              <h6>Fast Booking</h6>
+            </div>
           </div>
         </div>
       </div>
       
-      <!-- Right Side: Clean Booking Card -->
-      <div class="col-12 col-md-6 col-lg-5">
-        <div class="booking-card p-4 p-sm-5 shadow-lg rounded-4">
-          <div class="card-header-content mb-4">
-            <h2 class="fw-bold tracking-tight text-dark">Plan Your Trip</h2>
-            <p class="text-muted small mb-0">Explore the world with us! Book your dream trip today.</p>
+      <!-- Right Side: Frosted Glass Booking Card -->
+      <div class="col-12 col-md-8 col-lg-5">
+        <div class="glass-card p-4 p-sm-5 shadow-2xl">
+          <div class="mb-4">
+            <h2 class="fw-bold text-white mb-2">Plan Your Trip</h2>
+            <p class="text-white-50 small">Design your custom itinerary with our responsive planner.</p>
           </div>
           
           <form action="#" method="POST" class="booking-form">
-            {% csrf_token %} <!-- Don't forget security tokens in Django POST forms! -->
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control unique-input" id="destination" name="destination" placeholder="Enter destination" required>
-              <label for="destination">Where to?</label>
+            {% csrf_token %}
+            
+            <!-- Destination Input with Glass Style -->
+            <div class="glass-form-group mb-4">
+              <label for="destination" class="form-label-glass">
+                <i class="bi bi-search me-1"></i> Destination
+              </label>
+              <div class="input-group-glass">
+                <span class="input-icon"><i class="bi bi-map"></i></span>
+                <input type="text" class="form-control glass-input" id="destination" name="destination" placeholder="Enter destination..." required>
+              </div>
             </div>
             
-            <div class="form-floating mb-4">
-              <input type="date" class="form-control unique-input" id="date" name="date" required>
-              <label for="date">Travel Date</label>
+            <!-- Date Input with Glass Style -->
+            <div class="glass-form-group mb-4">
+              <label for="date" class="form-label-glass">
+                <i class="bi bi-calendar3 me-1"></i> Travel Date
+              </label>
+              <div class="input-group-glass">
+                <span class="input-icon"><i class="bi bi-calendar-event"></i></span>
+                <input type="date" class="form-control glass-input" id="date" name="date" required>
+              </div>
             </div>
             
-            <button type="submit" class="btn btn-action w-100 py-3 fw-semibold shadow-sm">
-              Book Now 
-              <i class="bi bi-arrow-right ms-2"></i>
+            <!-- Glossy/Glass Submit Button -->
+            <button type="submit" class="btn btn-glass-primary w-100 py-3 fw-bold tracking-wide mt-2">
+              Book Now <i class="bi bi-arrow-right-short ms-1 fs-5 align-middle"></i>
             </button>
           </form>
         </div>
